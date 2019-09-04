@@ -18,6 +18,9 @@
 // 0 トップ
 Route::get('/', 'FrontController@index');
 
+Route::get('about//', 'AboutController@index');
+
+
 
 
 Route::get('/test2', function () {
