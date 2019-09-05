@@ -18,6 +18,7 @@
 // 0 トップ
 Route::get('/', 'FrontController@index');
 
+// 1_学校案内
 Route::get('about//', 'AboutController@index');
 Route::get('about/message', 'AboutController@message'); // done
 Route::get('about/message2', 'AboutController@message2'); // done
@@ -30,6 +31,14 @@ Route::get('about/organization', 'AboutController@organization'); // done
 Route::get('about/school', 'AboutController@school'); // done
 Route::get('about//', 'AboutController@index'); // done
 
+
+// 2_学校生活
+Route::get('school/club/{name}', 'SchoolController@clubDetail'); // done
+Route::get('school/club', 'SchoolController@club'); // done
+Route::get('school/uniform', 'SchoolController@uniform'); // done
+Route::get('school//', 'SchoolController@index');
+Route::get('school/dream', 'SchoolController@dream');
+Route::get('school/event', 'SchoolController@event');
 
 
 Route::get('/test2', function () {
