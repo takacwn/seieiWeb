@@ -45,6 +45,23 @@ Route::get('course/{name}', 'CourseController@detail');
 Route::get('course', 'CourseController@index');
 
 
+// 4_入試情報
+Route::get('exam/course', 'ExamController@course');
+Route::get('exam/tour', 'ExamController@tour');
+Route::get('exam/open', 'ExamController@open');
+Route::get('exam/points', 'ExamController@points');
+Route::get('exam/suisen', 'ExamController@suisen');
+Route::get('exam/ippan_a', 'ExamController@ippan_a');
+Route::get('exam/ippan_b', 'ExamController@ippan_b');
+Route::get('exam/explanation', 'ExamController@explanation');
+Route::get('exam/explanation2', 'ExamController@explanation2');
+Route::get('exam/', 'ExamController@index');
+
+
+
+
+
+
 Route::get('/test2', function () {
     return view('test2');
 });
