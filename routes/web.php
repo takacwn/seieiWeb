@@ -40,6 +40,10 @@ Route::get('school//', 'SchoolController@index');
 Route::get('school/dream', 'SchoolController@dream');
 Route::get('school/event', 'SchoolController@event');
 
+// 3_学科・コース
+Route::get('course/{name}', 'CourseController@detail');
+Route::get('course', 'CourseController@index');
+
 
 Route::get('/test2', function () {
     return view('test2');
