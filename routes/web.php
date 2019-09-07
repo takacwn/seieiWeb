@@ -57,7 +57,12 @@ Route::get('exam/explanation', 'ExamController@explanation');
 Route::get('exam/explanation2', 'ExamController@explanation2');
 Route::get('exam/', 'ExamController@index');
 
-
+// 5_通信制
+Route::get('home_schooling/about', 'HomeController@about');
+Route::get('home_schooling/guide', 'HomeController@guide');
+Route::get('home_schooling/way', 'HomeController@way');
+Route::get('home_schooling/life', 'HomeController@life');
+Route::get('home_schooling/', 'HomeController@index');
 
 
 
