@@ -64,7 +64,11 @@ Route::get('home_schooling/way', 'HomeController@way');
 Route::get('home_schooling/life', 'HomeController@life');
 Route::get('home_schooling/', 'HomeController@index');
 
-
+//  6_フッターリンク
+Route::get('ijime-prevent', 'FrontController@ijime');
+Route::get('download', 'FrontController@download');
+Route::get('access', 'FrontController@access');
+Route::get('recruit', 'FrontController@recruit');
 
 
 Route::get('/test2', function () {

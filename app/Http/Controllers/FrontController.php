@@ -39,7 +39,7 @@ class FrontController extends Controller
 
 		return view('index', ['top'  => 'page-top','open' => $open,'news' => $news,]);
 
-		//return view('test2');    
+		//return view('test2');
 	}
 
 	public function mail()
