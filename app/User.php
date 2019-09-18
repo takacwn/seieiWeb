@@ -1,29 +1,25 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: rootcom
+ * Date: 2016/07/24
+ * Time: 11:31
+ */
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
+    public $fillable = [
+        'lastname',
+        'firstname',
+        'email',
+        'active',
+        'site',
+        'tag',
+        'send_key',
     ];
 }
