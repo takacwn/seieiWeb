@@ -8,6 +8,11 @@ use App\Http\Requests;
 use App\User;
 use App\Wysijauser;   //20161110追記
 
+//20190919追記　メール文字化け対策（メール送信方法変更）
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailMagagineKoudoku;
+
+
 class FormController extends Controller
 {
 
@@ -124,17 +129,19 @@ class FormController extends Controller
     public function sendMail($user)
     {
 
-        \Mail::plain('email.confirm', [
-            'user' => $user,
-        ], function ($message) use ($user) {
-            $message
-                ->to($user->email)
-                ->subject(env('MAIL_SUBJECT') . '[誠英高等学校] 送信されたリクエストを確認してください。')
-                ->setCharset('ISO-2022-JP')
-                ->setEncoder(new \Swift_Mime_ContentEncoder_PlainContentEncoder('7bit'))
-                ->setMaxLineLength(0);
+        // \Mail::plain('email.confirm', [
+        //     'user' => $user,
+        // ], function ($message) use ($user) {
+        //     $message
+        //         ->to($user->email)
+        //         ->subject(env('MAIL_SUBJECT') . '[誠英高等学校] 送信されたリクエストを確認してください。')
+        //         ->setCharset('ISO-2022-JP')
+        //         ->setEncoder(new \Swift_Mime_ContentEncoder_PlainContentEncoder('7bit'))
+        //         ->setMaxLineLength(0);
+        //
+        // });
+        Mail::to($user->email)->send(new MailMagagineKoudoku('[誠英高等学校] 送信されたリクエストを確認してください。',$user));
 
-        });
 
     }
 
