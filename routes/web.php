@@ -70,7 +70,7 @@ Route::get('download', 'FrontController@download');
 Route::get('access', 'FrontController@access');
 Route::get('recruit', 'FrontController@recruit');
 
-// 10_問い合わせ
+// 10_問い合わせ★★★★★★★★
 Route::get('contact/complete', 'ContactController@complete');
 Route::post('contact', 'ContactController@index');
 Route::get('contact', 'ContactController@index');
@@ -84,6 +84,10 @@ Route::get('mail/confirm/{key}', 'FormController@confirm');
 Route::get('mail/complete', 'FormController@complete');
 Route::post('mail', 'FormController@index');
 Route::get('mail', 'FormController@index');
+
+// 11_申込み★★★★★★★★
+
+// 12_入試説明会申込(2016.10.7追記)★★★★★★★★
 
 Route::get('/test2', function () {
     return view('test2');
