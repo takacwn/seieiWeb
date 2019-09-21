@@ -1,0 +1,195 @@
+@extends('layout')
+
+@section('content')
+
+  <div id="front" class="control-wrapper recruit">
+  @include('menu')
+  @include('header')
+
+  <!-- key visual  -->
+    <div id="page-visual">
+      <div class="visual">
+        <img src="{{ asset('img/sp/recruit/main.jpg') }}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div id="page-name">
+      <div class="inner">
+        <p class="icon-title">教職員採用</p>
+      </div>
+      <p class="middle-line"></p>
+    </div>
+
+    <div class="wrapper">
+
+      <div class="cnt-detail content-block">
+
+
+        <div class="cnt-section">
+
+          <h3 class="title">募集内容</h3>
+          <p class="middle-line small no"></p>
+
+          <div class="desc">
+            <div class="section">
+
+              <div class="subject">
+                誠英高等学校では、現在、以下の人材を募集しています。
+              </div>
+
+              <h3 class="title">常勤講師</h3>
+              <div class="recruit-block">
+                <div class="rwrap">
+                  <p class="label">採用予定日</p>
+                  <p class="value">平成31年4月1日</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">募集教科</p>
+                  <p class="value">家庭科</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">職種</p>
+                  <p class="value">常勤講師</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">説明</p>
+                  <p class="value t-left">
+                    本校の普通科生活文化コース食文化専攻を主とした家庭科クラスを教えていただける家庭科講師を募集しています。まずは、常勤講師として勤務いただき、その後教諭としてご活躍いただけることを期待しています。今後、「食文化」を、本校の特徴の一つとして、地域貢献など、様々な取り組みを通してリードしていただける方大歓迎！</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">応募資格</p>
+                  <p class="value">家庭科教員免許および調理師免許保有（または取得見込）</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">歓迎するスキル・志向</p>
+                  <p class="value">教育経験、調理経験、教育への熱意、新しい取り組みへのチャレンジ精神</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">給料</p>
+                  <p class="value">本学園の規定による</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">勤務地</p>
+                  <p class="value">誠英高等学校</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">勤務時間</p>
+                  <p class="value">平日 8:20～17:05</p>
+                </div>
+
+                <div class="rwrap">
+                  <p class="label">休日休暇</p>
+                  <p class="value">土日祝日、夏季休暇、年末年始、年次有給休暇、特別休暇</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">ご提出いただきたい書類</p>
+                  <p class="value t-left">
+                    ・履歴書（写真貼付）<br/>
+                    ・卒業証明書の写しまたは卒業見込証明書<br/>
+                    ・教員免許状の写しまたは教員免許取得見込証明書<br/>
+                    ・調理師免許状の写し</p>
+                </div>
+              </div>
+
+
+              <h3 class="title" style="margin:40px 0 10px 0;">非常勤講師</h3>
+              <div class="recruit-block">
+                <div class="rwrap">
+                  <p class="label">採用予定日</p>
+                  <p class="value">平成31年4月1日</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">募集教科</p>
+                  <p class="value">数学・理科・家庭科・工業科・商業・福祉・情報</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">職種</p>
+                  <p class="value">非常勤講師</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">説明</p>
+                  <p class="value">まずは、非常勤講師として勤務いただき、その後常勤講師・教諭としてご活躍いただけることを期待しています。</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">応募資格</p>
+                  <p class="value">各教科の教員免許保有（または取得見込）</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">歓迎するスキル・志向</p>
+                  <p class="value">教育経験、教育への熱意、新しい取り組みへのチャレンジ精神</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">給料</p>
+                  <p class="value">本学園の規定による</p>
+                </div>
+                <div class="rwrap">
+                  <p class="label">勤務地</p>
+                  <p class="value">誠英高等学校</p>
+                </div>
+
+                <div class="rwrap">
+                  <p class="label">ご提出いただきたい書類</p>
+                  <p class="value t-left">
+                    ・履歴書（写真貼付）<br/>
+                    ・卒業証明書の写しまたは卒業見込証明書<br/>
+                    ・教員免許状の写しまたは教員免許取得見込証明書<br/>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="cnt-section">
+
+          <h3 class="title">選考プロセス</h3>
+          <p class="middle-line small no"></p>
+
+          <div class="desc">
+            <div class="wrap select-wrapper">
+              <div class="select-block">
+                ご応募
+              </div>
+              <p class="ar"><img src="{{ asset('img/sp/arrow_blue.png') }}" width="13" alt=""></p>
+              <div class="select-block">
+                書類選考
+              </div>
+              <p class="ar"><img src="{{ asset('img/sp/arrow_blue.png') }}" width="13" alt=""></p>
+              <div class="select-block">
+                面接
+              </div>
+              <p class="ar"><img src="{{ asset('img/sp/arrow_blue.png') }}" width="13" alt=""></p>
+              <div class="select-block">
+                内定・採用
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cnt-section">
+
+          <h3 class="title">お問い合わせ</h3>
+          <p class="middle-line small no"></p>
+
+          <div class="desc">
+            <div class="section">
+
+              <div class="subject">
+                ご興味のある方は、まずは履歴書を郵送、メール添付、ファックスのいずれかでご送付ください。<br/>ご不明点等がある場合は、遠慮なくご連絡ください。<br/>
+                〒747-0813　山口県防府市東三田尻1丁目2-14 <br/>
+                誠英高等学校<br/>
+                TEL: 0835-38-5252　FAX: 0835-38-5353<br/>
+                <a href="mailto:saiyo@seiei.ac.jp?subject=三田尻学園誠英高等学校 教職員採用について" class="maillink">saiyo@seiei.ac.jp</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+@endsection
