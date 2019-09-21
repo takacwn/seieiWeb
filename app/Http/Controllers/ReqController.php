@@ -8,29 +8,30 @@ use App\Http\Requests;
 
 //20190919追記　メール文字化け対策（メール送信方法変更）
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
+use App\Mail\RequestMail;
 
-class ContactController extends FormController
+class ReqController extends FormController
 {
 
-    public function sendContactMail($data)
+    public function sendRequestMail($data)
     {
 
-        // \Mail::plain('email.contact', [
+        // \Mail::plain('email.request', [
         //     'data' => $data,
         // ], function ($message) {
         //     $message
-        //         ->to(env('MAIL_CONTACT_ADDRESS'))
-        //         ->subject(env('MAIL_SUBJECT') . '[誠英高等学校] 問い合わせフォーム')
+        //         ->to(env('MAIL_FROM_ADDRESS'))
+        //         ->subject(env('MAIL_SUBJECT') . '[誠英高等学校] 資料請求フォーム')
         //         ->setCharset('ISO-2022-JP')
         //         ->setEncoder(new \Swift_Mime_ContentEncoder_PlainContentEncoder('7bit'))
         //         ->setMaxLineLength(0);
         //
         // });
 
-        Mail::to(env('MAIL_CONTACT_ADDRESS'))->send(new ContactMail('[誠英高等学校] 問い合わせフォーム',$data));
+        Mail::to(env('MAIL_CONTACT_ADDRESS'))->send(new RequestMail('[誠英高等学校] 資料請求・申し込みフォーム',$data));
 
     }
+
 
 
     public function index(Request $request)
@@ -38,21 +39,25 @@ class ContactController extends FormController
 
         $error = [];
 
+        $isCheck = [];
+
         if ($request->isMethod('post')) {
+
+            foreach (['open1','open2', 'disp1', 'disp2', 's_guide', 's_youkou'] as $key) {
+                if ($request->has($key)) {
+                    $isCheck[] = true;
+                }
+            }
+
+
+            if (!count($isCheck)) {
+                $error[] = 'お申し込み内容が選択されていません。';
+            }
 
             list($names, $messages) = $this->addAttrValidation($request);
 
-            $names = array_merge($names, [
-                'subject'   => 'required',
-                'body'      => 'required',
-            ]);
-            $messages = array_merge($messages, [
-                'subject.required' => '件名が入力されていません。',
-                'body.required' => 'お問合わせ内容が入力されていません。'
-            ]);
 
             $valid = \Validator::make($request->all(), $names, $messages);
-
 
             if ($request->get('mailmagazine') == '1' && $this->isUser($request->get('email'))) {
                 $error[] = '既にメールアドレスが登録されています。';
@@ -61,7 +66,8 @@ class ContactController extends FormController
 
             if (!count($error) && !$valid->fails()) {
 
-                if ($request->get('send')) {    //confirm.blade.phpから送られたFormデータだった場合
+                if ($request->get('send')) {
+
 
                     // 配信を希望するにチェックが入ってるとき
                     if ($request->get('mailmagazine') == '1') {
@@ -78,25 +84,25 @@ class ContactController extends FormController
                         $data['label'] = '希望しない';
                     }
 
-                    $this->sendContactMail((object)$data);
+                    $this->sendRequestMail((object)$data);
 
-                    return redirect('contact/complete');
+                    return redirect('request/complete');
                 }
-                return view('contact.confirm');
+                return view('req.confirm');
             } else {
                 $error = array_merge($error, $valid->errors()->all());
             }
         }
 
-        return view('contact.form', [
+        return view('req.form', [
             'error' => $error,
         ]);
 
     }
 
+
     public function complete()
     {
-        return view('contact.complete');
+        return view('req.complete');
     }
-
 }

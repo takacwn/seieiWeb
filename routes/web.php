@@ -70,12 +70,7 @@ Route::get('download', 'FrontController@download');
 Route::get('access', 'FrontController@access');
 Route::get('recruit', 'FrontController@recruit');
 
-// 10_問い合わせ★★★★★★★★
-Route::get('contact/complete', 'ContactController@complete');
-Route::post('contact', 'ContactController@index');
-Route::get('contact', 'ContactController@index');
-
-//メルマガ関連
+// 09_メルマガ関連
 Route::get('mail/stop/complete', 'FormController@stopComplete');
 Route::post('mail/stop', 'FormController@stop');
 Route::get('mail/stop', 'FormController@stop');
@@ -85,9 +80,22 @@ Route::get('mail/complete', 'FormController@complete');
 Route::post('mail', 'FormController@index');
 Route::get('mail', 'FormController@index');
 
-// 11_申込み★★★★★★★★
+// 10_問い合わせ
+Route::get('contact/complete', 'ContactController@complete');
+Route::post('contact', 'ContactController@index');
+Route::get('contact', 'ContactController@index');
 
-// 12_入試説明会申込(2016.10.7追記)★★★★★★★★
+// 11_申込み
+Route::get('request/complete', 'ReqController@complete');
+Route::post('request', 'ReqController@index');
+Route::get('request', 'ReqController@index');
+
+
+// 12_入試説明会申込(2016.10.7追記)
+Route::get('subscription/complete', 'SubscriptionController@complete');
+Route::post('subscription', 'SubscriptionController@index');
+Route::get('subscription', 'SubscriptionController@index');
+
 
 Route::get('/test2', function () {
     return view('test2');
